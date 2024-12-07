@@ -17,15 +17,15 @@ partial class Program
         int[] rightArray = File.ReadAllLines(rightPath).Select(int.Parse).ToArray();
 
         Dictionary<int, int> frequencyDict = new Dictionary<int, int>();
-        for (int i = 0; i < rightArray.Length; i++)
+        foreach (int num in rightArray)
         {
-            if (frequencyDict.ContainsKey(rightArray[i]))
+            if (frequencyDict.ContainsKey(num))
             {
-                frequencyDict[rightArray[i]]++;
+                frequencyDict[num]++;
             }
             else
             {
-                frequencyDict[rightArray[i]] = 1;
+                frequencyDict[num] = 1;
             }
         }
 
@@ -37,5 +37,6 @@ partial class Program
                 sum += leftNumber * frequencyDict[leftNumber];
             }
         }
+        Console.WriteLine(sum);
     }
 }

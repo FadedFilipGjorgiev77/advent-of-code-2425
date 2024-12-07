@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Collections.Generic;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 partial class Program
 {
@@ -15,5 +16,16 @@ partial class Program
         int[] rightArray = File.ReadAllLines(rightPath).Select(int.Parse).ToArray();
 
         Dictionary<int, int> frequencyDict = new Dictionary<int, int>();
+        for (int i = 0; i < rightArray.Length; i++)
+        {
+            if (frequencyDict.ContainsKey(rightArray[i]))
+            {
+                frequencyDict[rightArray[i]]++;
+            }
+            else
+            {
+                frequencyDict[rightArray[i]] = 1;
+            }
+        }
     }
 }

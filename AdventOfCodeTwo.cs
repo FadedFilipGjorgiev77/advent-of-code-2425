@@ -29,9 +29,8 @@ partial class Program
             }
         }
 
-        for (int i = 0; i < leftArray.Length; i++)
+        foreach (int leftNumber in leftArray)
         {
-            int leftNumber = leftArray[i];
             if (frequencyDict.ContainsKey(leftNumber))
             {
                 sum += leftNumber * frequencyDict[leftNumber];

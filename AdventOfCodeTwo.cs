@@ -13,5 +13,7 @@ partial class Program
 
         int[] leftArray = File.ReadAllLines(leftPath).Select(int.Parse).ToArray();
         int[] rightArray = File.ReadAllLines(rightPath).Select(int.Parse).ToArray();
+
+        Dictionary<int, int> frequencyDict = new Dictionary<int, int>();
     }
 }

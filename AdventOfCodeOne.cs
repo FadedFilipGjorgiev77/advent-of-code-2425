@@ -10,5 +10,8 @@ string rightPath = "C:\\HTL\\CABS\\ProtokollAdventOfCode\\RightList.csv";
 int[] leftArray = File.ReadAllLines(leftPath).Select(int.Parse).ToArray();
 int[] rightArray = File.ReadAllLines(rightPath).Select(int.Parse).ToArray();
 
+Array.Sort(leftArray);
+Array.Sort(rightArray);
+
 Console.WriteLine(string.Join(", ", leftArray));
 Console.WriteLine(string.Join(", ", rightArray));

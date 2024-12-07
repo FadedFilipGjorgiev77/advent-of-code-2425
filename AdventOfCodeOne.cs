@@ -13,10 +13,9 @@ int[] rightArray = File.ReadAllLines(rightPath).Select(int.Parse).ToArray();
 Array.Sort(leftArray);
 Array.Sort(rightArray);
 
-Console.WriteLine(string.Join(", ", leftArray));
-Console.WriteLine(string.Join(", ", rightArray));
-
 for (int i = 0; i < leftArray.Length; i++)
 {
     difference += Math.Abs(leftArray[i] - rightArray[i]);
 }
+
+Console.WriteLine(difference);

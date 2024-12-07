@@ -11,6 +11,7 @@ partial class Program
         // File paths for the CSV files
         string leftPath = "C:\\HTL\\CABS\\ProtokollAdventOfCode\\LeftList.csv";
         string rightPath = "C:\\HTL\\CABS\\ProtokollAdventOfCode\\RightList.csv";
+        int sum = 0;
 
         int[] leftArray = File.ReadAllLines(leftPath).Select(int.Parse).ToArray();
         int[] rightArray = File.ReadAllLines(rightPath).Select(int.Parse).ToArray();
@@ -25,6 +26,15 @@ partial class Program
             else
             {
                 frequencyDict[rightArray[i]] = 1;
+            }
+        }
+
+        for (int i = 0; i < leftArray.Length; i++)
+        {
+            int leftNumber = leftArray[i];
+            if (frequencyDict.ContainsKey(leftNumber))
+            {
+                sum += leftNumber * frequencyDict[leftNumber];
             }
         }
     }
